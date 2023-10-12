@@ -7,73 +7,33 @@ NAVIGATE_ACTIONS = MOVE_ACTIONS + (
     nethack.Command.KICK,
     nethack.Command.SEARCH,
 )
-env = gym.make(
+"""env = gym.make(
     "MiniHack-Corridor-R3-v0",
     actions=NAVIGATE_ACTIONS,
-)
-"""env = gym.make(
+)"""
+env = gym.make(
    "MiniHack-River-v0",
    observation_keys=("glyphs", "chars_crop", "colors", "pixel"),
-)"""
+   actions=NAVIGATE_ACTIONS,
+)
 print(env)
-env.reset() # each reset generates a new environment instance
-env.render()
-env.step(1)  # move agent '@' north
-env.render()
-env.step(1)
-env.render()
-env.step(1)
-env.render()
-env.step(1)
-env.render()
-env.step(1)
-env.render()
-env.step(1)
-env.render()
-env.step(2)
-env.render()
-env.step(2)
-env.render()
-env.step(2)
-env.render()
-env.step(2)
-env.render()
-env.step(3)
-env.render()
-env.step(3)
-env.render()
-env.step(3)
-env.render()
-env.step(3)
-env.render()
-env.step(3)
-env.render()
-env.step(4)  # move agent '@' north
-env.render()
-env.step(4)
-env.render()
-env.step(4)
-env.render()
 while(1):
-	env.step(1)
+	"""env.step(1)
 	env.render()
 	env.step(2)
 	env.render()
 	env.step(3)
 	env.render()
 	env.step(4)
-	env.render()
-	"""MOVE_ACTIONS[0].N
-	env.render()
-	MOVE_ACTIONS[0].S
 	env.render()"""
-	"""env.render()
-	nethack.CompassCardinalDirection.E
-	nethack.CompassCardinalDirection.E
+	#MOVE_ACTIONS[0].N
+	#MOVE_ACTIONS[0].S
+	env.step(MOVE_ACTIONS[0].N)
+	nethack.CompassDirection.E
 	env.render()
-	nethack.CompassCardinalDirection.S
-	nethack.CompassCardinalDirection.S
+	nethack.CompassDirection.S
+	nethack.CompassDirection.S
 	env.render()
-	nethack.CompassCardinalDirection.W
-	nethack.CompassCardinalDirection.W
-	env.render()"""
+	nethack.CompassDirection.W
+	nethack.CompassDirection.W
+	env.render()
